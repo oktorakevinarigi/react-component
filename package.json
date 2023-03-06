@@ -1,6 +1,6 @@
 {
   "name": "@oktora/react-component",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "repository": "https://github.com/oktorakevinarigi/react-component.git",
   "author": "Oktora Kevin Arigi <oktoraarigi@ymail.com>",
