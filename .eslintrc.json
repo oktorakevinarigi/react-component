@@ -1,0 +1,76 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:import/typescript"
+  ],
+  "overrides": [
+    
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "react",
+    "@typescript-eslint",
+    "sonarjs",
+    "prettier"
+  ],
+  "rules": {
+    "react/no-array-index-key": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-redeclare": "error",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 2
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error"
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ]
+  }
+}
