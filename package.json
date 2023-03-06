@@ -1,5 +1,5 @@
 {
-  "name": "react-component",
+  "name": "@oktora/react-component",
   "version": "0.0.1",
   "main": "dist/index.js",
   "repository": "https://github.com/oktorakevinarigi/react-component.git",
@@ -24,5 +24,8 @@
     "clean": true,
     "dts": true,
     "format": ["cjs", "esm"]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
