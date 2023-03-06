@@ -10,13 +10,25 @@
   "scripts": {
     "build": "tsup src/index.ts",
     "start": "tsup src/index.ts --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack4": "^6.5.16",
+    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@swc/core": "^1.3.38",
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -41,5 +53,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "dependencies": {}
 }
