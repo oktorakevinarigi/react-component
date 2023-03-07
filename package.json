@@ -11,12 +11,16 @@
   "files": [
     "dist/**"
   ],
+  "engines": {
+    "node": "18.14.0",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
     "build": "tsup src/index.ts",
     "start": "tsup src/index.ts --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-stb": "storybook build --quiet -o stb-dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
