@@ -18,6 +18,8 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    darkMode: { current: 'light' },
+    layout: "centered",
   },
 }
 

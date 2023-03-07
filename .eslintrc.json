@@ -29,6 +29,11 @@
     "sonarjs",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {} 
+    }
+  },
   "rules": {
     "react/no-array-index-key": "error",
     "@typescript-eslint/no-unused-vars": "error",
