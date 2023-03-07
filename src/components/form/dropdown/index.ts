@@ -1,1 +1,1 @@
-export { Dropdown } from "./dropdown"
+export { Dropdown, type DropdownProps } from "./dropdown"

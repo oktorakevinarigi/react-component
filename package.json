@@ -1,12 +1,16 @@
 {
   "name": "@oktora/react-component",
-  "version": "0.0.7",
+  "version": "0.0.25",
   "main": "dist/index.js",
   "repository": "https://github.com/oktorakevinarigi/react-component.git",
   "author": "Oktora Kevin Arigi <oktoraarigi@ymail.com>",
   "license": "MIT",
+  "sideEffects": false,
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup src/index.ts",
     "start": "tsup src/index.ts --watch",
@@ -52,9 +56,15 @@
   "tsup": {
     "clean": true,
     "dts": true,
+    "minify": true,
+    "target": "es2019",
     "format": [
       "cjs",
       "esm"
+    ],
+    "external": [
+      "react",
+      "react-dom"
     ]
   },
   "publishConfig": {
