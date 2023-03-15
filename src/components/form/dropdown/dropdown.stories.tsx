@@ -27,9 +27,7 @@ export const Mobile: DeopdownStory = {
       },
     ],
     error: "",
-    placeholder: "",
     isPortal: true,
-    isRequired: false,
   },
 }
 

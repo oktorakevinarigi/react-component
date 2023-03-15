@@ -1,4 +1,12 @@
 import React, { useState } from "react"
+import {
+  useDisclosure,
+  type FormControlProps,
+  type FormLabelProps,
+  type InputProps,
+  type FlexProps,
+} from "@chakra-ui/react"
+
 import { useDebounce } from "@utils"
 import { DropdownDesktop } from "./dropdown-desktop"
 import { DropdownMobile } from "./dropdown-mobile"
@@ -10,9 +18,12 @@ export type DropdownProps = {
   onSelected?: (value: string | number) => void
   lists?: { label: string; value: string | number }[]
   error?: string
-  placeholder?: string
   isPortal?: boolean
-  isRequired?: boolean
+  formControl?: FormControlProps
+  styleLabel?: FormLabelProps
+  styleInput?: InputProps
+  styleSearch?: InputProps
+  styleListItem?: FlexProps
 }
 
 export function Dropdown(props: DropdownProps) {
@@ -23,16 +34,20 @@ export function Dropdown(props: DropdownProps) {
     lists = [],
     error = "",
     label = "",
-    placeholder = "",
     isPortal = true,
-    isRequired = false,
+
+    formControl,
+    styleLabel,
+    styleInput,
+    styleSearch,
+    styleListItem,
   } = props
-  const [isOpen, setOpen] = useState(false)
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const [search, setSearch] = useState("")
   const deb = useDebounce(search, 500)
 
   function selected(valueSelected: string | number) {
-    setOpen(false)
+    onClose()
     setSearch("")
     if (onSelected) {
       onSelected(valueSelected)
@@ -46,17 +61,17 @@ export function Dropdown(props: DropdownProps) {
     value,
     selected,
     isOpen,
-    onOpen: () => {
-      setOpen(true)
-    },
-    onClose: () => {
-      setOpen(false)
-    },
+    onOpen,
+    onClose,
     error,
     label,
-    placeholder,
     isPortal,
-    isRequired,
+
+    formControl,
+    styleLabel,
+    styleInput,
+    styleSearch,
+    styleListItem,
   }
   if (isMobile) {
     return <DropdownMobile {...newProps} />
