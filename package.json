@@ -20,6 +20,9 @@
     "start": "tsup src/index.ts --watch",
     "storybook": "storybook dev -p 6006",
     "build-stb": "storybook build --quiet -o stb-dist",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky install",
+    "lint:staged": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -50,6 +53,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-storybook": "^0.6.11",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
