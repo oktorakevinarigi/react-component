@@ -1,0 +1,394 @@
+import { Meta, ArgsTable, Story } from "@storybook/addon-docs";
+
+import { Palette } from "./components";
+import { Box, SimpleGrid, Text, Flex } from "../ui";
+
+<Meta title="UI Docs / Theme" description="The default theme tokens." />
+
+# Theme
+
+> This page of documentation was inspired by [chakra-ui's default theme](https://chakra-ui.com/docs/theming/theme)
+
+> **Relative unit mental model:** `em` is relative to the font-size of its direct or nearest parent, `rem` is only relative to the html (root) font-size. [Read more](https://j.eremy.net/confused-about-rem-and-em/).
+
+The theme object is where you define your application's color palette, type 
+scale, font stacks, breakpoints, border radius values, and more.
+
+Theming with Chakra UI is based on the 
+[Styled System Theme Specification](https://styled-system.com/theme-specification/)
+
+## Colors
+
+### Gray Color
+
+<Palette name="gray" />
+
+### Red Color
+
+<Palette name="red" />
+
+### Orange Color
+
+<Palette name="orange" />
+
+### Yellow Color
+
+<Palette name="yellow" />
+
+### Green Color
+
+<Palette name="green" />
+
+### Teal Color
+
+<Palette name="teal" />
+
+### Blue Color
+
+<Palette name="blue" />
+
+### Cyan Color
+
+<Palette name="cyan" />
+
+### Purple Color
+
+<Palette name="purple" />
+
+### Pink Color
+
+<Palette name="pink" />
+
+## Typography
+
+To manage Typography options, the theme object supports the following keys:
+
+*   `fonts` (font families)
+*   `fontSizes`
+*   `fontWeights`
+*   `lineHeights`
+*   `letterSpacings`
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+// example theme
+const theme = extendTheme({
+  colors: {...},
+  fonts: {
+    body: "system-ui, sans-serif",
+    heading: "Georgia, serif",
+    mono: "Menlo, monospace",
+  },
+  fontSizes: {
+    xs: "0.75rem", // 12px
+    sm: "0.875rem", // 14px
+    md: "1rem", // 16px
+    lg: "1.125rem", // 18px
+    xl: "1.25rem", // 20px
+    "2xl": "1.5rem", // 24px
+    "3xl": "1.875rem", // 30px
+    "4xl": "2.25rem", // 36px
+    "5xl": "3rem", // 48px
+    "6xl": "3.75rem", // 60px
+    "7xl": "4.5rem", // 72px
+    "8xl": "6rem", // 96px
+    "9xl": "8rem", // 128px
+  },
+  fontWeights: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
+  lineHeights: {
+    normal: "normal",
+    none: 1,
+    shorter: 1.25,
+    short: 1.375,
+    base: 1.5,
+    tall: 1.625,
+    taller: "2",
+    "3": ".75rem", // 12px
+    "4": "1rem", // 16px
+    "5": "1.25rem", // 20px
+    "6": "1.5rem", // 24px
+    "7": "1.75rem", // 28px
+    "8": "2rem", // 32px
+    "9": "2.25rem", // 36px
+    "10": "2.5rem", // 40px
+  },
+  letterSpacings: {
+    tighter: "-0.05em", // -0.5px
+    tight: "-0.025em", // -0.25px
+    normal: "0", // 0px
+    wide: "0.025em", // 0.25px
+    wider: "0.05em", // 0.5px
+    widest: "0.1em", // 1px
+  },
+});
+```
+
+## Breakpoints
+
+Chakra UI comes with a predefined set of commonly used breakpoints.
+
+> Learn more about 
+> [Responsive Styles and Customizing Breakpoints](https://chakra-ui.com/docs/styled-system/responsive-styles).
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+const breakpoints = {
+  sm: '30em', // 480px
+  md: '48em', // 768px
+  lg: '62em', // 992px
+  xl: '80em', // 992px
+  '2xl': '96em', // 1280px
+}
+
+const theme = extendTheme({ breakpoints, ... })
+```
+
+## Spacing
+The `space` key allows you to customize the global spacing and sizing scale for 
+your project. By default these spacing value can be referenced by the `padding`,
+`margin`, and `top`, `left`, `right`, `bottom` styles.
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+const spacing = {
+  space: {
+    px: '1px',
+    0.5: '0.125rem', // 2px
+    1: '0.25rem', // 4px
+    1.5: '0.375rem', // 6px
+    2: '0.5rem', // 8px
+    2.5: '0.625rem', // 10px
+    3: '0.75rem', // 12px
+    3.5: '0.875rem', // 14px
+    4: '1rem', // 16px
+    5: '1.25rem', // 20px
+    6: '1.5rem', // 24px
+    7: '1.75rem', // 28px
+    8: '2rem', // 32px
+    9: '2.25rem', // 36px
+    10: '2.5rem', // 40px
+    12: '3rem', // 48px
+    14: '3.5rem', // 56px
+    16: '4rem', // 64px
+    20: '5rem', // 80px
+    24: '6rem', // 96px
+    28: '7rem', // 112px
+    32: '8rem', // 128px
+    36: '9rem', // 144px
+    40: '10rem', // 160px
+    44: '11rem', // 176px
+    48: '12rem', // 192px
+    52: '13rem', // 208px
+    56: '14rem', // 224px
+    60: '15rem', // 240px
+    64: '16rem', // 256px
+    72: '18rem', // 288px
+    80: '20rem', // 320px
+    96: '24rem', // 284px
+  },
+}
+
+const theme = extendTheme({ ...spacing })
+```
+
+By default, It includes a comprehensive numeric spacing scale inspired by
+Tailwind CSS. The values are proportional, so 1 spacing unit is equal to
+`0.25rem`, which translates to `4px` by default in common browsers.
+
+> **Mental model:** If you need a spacing of `40px`, divide it by `4`. That'll
+> give you `10`. Then use it in your component.
+
+| Name | Space    | Pixels |                                    |
+| ---- | -------- | ------ | ---------------------------------- |
+| px   | 1px      | 1px    | <Box bg="pink.200" h="4" w="px"/>  |
+| 0.5  | 0.125rem | 2px    | <Box bg="pink.200" h="4" w="0.5"/> |
+| 1    | 0.25rem  | 4px    | <Box bg="pink.200" h="4" w="1"/>   |
+| 1.5  | 0.375rem | 6px    | <Box bg="pink.200" h="4" w="1.5"/> |
+| 2    | 0.5rem   | 8px    | <Box bg="pink.200" h="4" w="2"/>   |
+| 2.5  | 0.625rem | 10px   | <Box bg="pink.200" h="4" w="2.5"/> |
+| 3    | 0.75rem  | 12px   | <Box bg="pink.200" h="4" w="3"/>   |
+| 3.5  | 0.875rem | 14px   | <Box bg="pink.200" h="4" w="3.5"/> |
+| 4    | 1rem     | 16px   | <Box bg="pink.200" h="4" w="4"/>   |
+| 5    | 1.25rem  | 20px   | <Box bg="pink.200" h="4" w="5"/>   |
+| 6    | 1.5rem   | 24px   | <Box bg="pink.200" h="4" w="6"/>   |
+| 7    | 1.75rem  | 28px   | <Box bg="pink.200" h="4" w="7"/>   |
+| 8    | 2rem     | 32px   | <Box bg="pink.200" h="4" w="8"/>   |
+| 9    | 2.25rem  | 36px   | <Box bg="pink.200" h="4" w="9"/>   |
+| 10   | 2.5rem   | 40px   | <Box bg="pink.200" h="4" w="10"/>  |
+| 12   | 3rem     | 48px   | <Box bg="pink.200" h="4" w="12"/>  |
+| 14   | 3.5rem   | 56px   | <Box bg="pink.200" h="4" w="14"/>  |
+| 16   | 4rem     | 64px   | <Box bg="pink.200" h="4" w="16"/>  |
+| 20   | 5rem     | 80px   | <Box bg="pink.200" h="4" w="20"/>  |
+| 24   | 6rem     | 96px   | <Box bg="pink.200" h="4" w="24"/>  |
+| 28   | 7rem     | 112px  | <Box bg="pink.200" h="4" w="28"/>  |
+| 32   | 8rem     | 128px  | <Box bg="pink.200" h="4" w="32"/>  |
+| 36   | 9rem     | 144px  | <Box bg="pink.200" h="4" w="36"/>  |
+| 40   | 10rem    | 160px  | <Box bg="pink.200" h="4" w="40"/>  |
+| 44   | 11rem    | 176px  | <Box bg="pink.200" h="4" w="44"/>  |
+| 48   | 12rem    | 192px  | <Box bg="pink.200" h="4" w="48"/>  |
+| 56   | 14rem    | 224px  | <Box bg="pink.200" h="4" w="56"/>  |
+| 60   | 15rem    | 240px  | <Box bg="pink.200" h="4" w="60"/>  |
+| 64   | 16rem    | 256px  | <Box bg="pink.200" h="4" w="64"/>  |
+| 72   | 18rem    | 288px  | <Box bg="pink.200" h="4" w="72"/>  |
+| 80   | 20rem    | 320px  | <Box bg="pink.200" h="4" w="80"/>  |
+| 96   | 24rem    | 384px  | <Box bg="pink.200" h="4" w="96"/>  |
+
+## Sizes
+
+The `sizes` key allows you to customize the global sizing of components you
+build for your project. By default these sizes value can be referenced by 
+the `width`, `height`, and `maxWidth`, `minWidth`, `maxHeight`, `minHeight` styles.
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+const sizes = {
+  sizes: {
+    ...theme.space,
+    max: 'max-content',
+    min: 'min-content',
+    full: '100%',
+    '3xs': '14rem', // 224px
+    '2xs': '16rem', // 256px
+    xs: '20rem', // 320px
+    sm: '24rem', // 384px
+    md: '28rem', // 348px
+    lg: '32rem', // 412px
+    xl: '36rem', // 476px
+    '2xl': '42rem', // 672px
+    '3xl': '48rem', // 604px
+    '4xl': '56rem', // 768px
+    '5xl': '64rem', // 1024px
+    '6xl': '72rem', // 1152px
+    '7xl': '80rem', // 1280px
+    '8xl': '90rem', // 1440px
+    container: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
+  },
+}
+
+const theme = extendTheme({ sizes, ...})
+```
+
+A component like this: `<Box w={4} h={3} />` will generate an empty `div` with 
+width set to `1rem` or `16px` and height set to `0.75rem` or `12px`.
+
+## Border radius
+
+Chakra provides a set of smooth corner radius values defined by the `radii` key.
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+export default {
+  radii: {
+    none: '0',
+    sm: '0.125rem', // 2px
+    base: '0.25rem', // 4px
+    md: '0.375rem', // 6px
+    lg: '0.5rem', // 8px
+    xl: '0.75rem', // 12px
+    '2xl': '1rem', // 16px
+    '3xl': '1.5rem', // 24px
+    full: '9999px',
+  },
+};
+
+const theme = extendTheme({ ...borderRadius, ...})
+```
+
+## z-index values
+Chakra provides a minimal set of z-Indices out of the box to help control the 
+stacking order of components.
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+const zIndices = {
+  zIndices: {
+    hide: -1,
+    auto: 'auto',
+    base: 0,
+    docked: 10,
+    dropdown: 1000,
+    sticky: 1100,
+    banner: 1200,
+    overlay: 1300,
+    modal: 1400,
+    popover: 1500,
+    skipLink: 1600,
+    toast: 1700,
+    tooltip: 1800,
+  },
+}
+const theme = extendTheme({ zIndices, ...})
+```
+
+## Box shadow
+
+It provides a set of box shadows.
+
+```js
+export default {
+  shadows: {
+    xs: "0 1px 4px 0 #dadada",
+    sm: "0 2px 12px 0 rgba(218, 218, 218, 0.5)",
+    base: "0 2px 12px 0 rgba(0, 0, 0, 0.1)",
+    md: "0 2px 18px 0 rgba(0, 0, 0, 0.1)",
+    lg: "0 1px 8px 0 #e0e0e0",
+    xl: "0 2px 8px 0 #dadada",
+    "2xl": "0 2px 12px 0 rgba(0, 0, 0, 0.3)",
+    outline: "0 0 0 3px rgba(66, 153, 225, 0.6)",
+    inner: "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
+    none: "none",
+    "blue-base": "0 2px 12px 0 rgba(34, 133, 137, 0.15)",
+    "blue-md": "0 2px 18px 0 rgba(34, 133, 137, 0.15)",
+  },
+};
+```
+
+## z-index values
+
+We recommend trying to solve stacking issues without `z-index`. You can read our
+recommendations and learn more about
+[stacking contexts](/?path=/story/ui-docs-stacking-contexts--page).
+
+Iy provides a minimal set of z-Indices out of the box to help control the
+stacking order of components.
+
+```js
+export default {
+  zIndices: {
+    hide: -1,
+    auto: "auto",
+    base: 0,
+    docked: 10,
+    dropdown: 1000,
+    sticky: 1100,
+    banner: 1200,
+    overlay: 1300,
+    modal: 1400,
+    popover: 1500,
+    skipLink: 1600,
+    toast: 1700,
+    tooltip: 1800,
+  },
+};
+```
