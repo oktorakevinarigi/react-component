@@ -41,7 +41,7 @@
     "import/no-cycle": [
       "error",
       {
-        "maxDepth": 2
+        "maxDepth": 5
       }
     ],
     "react/jsx-curly-brace-presence": [
