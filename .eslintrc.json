@@ -25,6 +25,7 @@
   "plugins": [
     "import",
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "sonarjs",
     "prettier"
@@ -38,6 +39,7 @@
     "react/no-array-index-key": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-redeclare": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "import/no-cycle": [
       "error",
       {
