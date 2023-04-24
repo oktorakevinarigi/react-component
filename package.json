@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsup src/index.ts",
     "start": "tsup src/index.ts --watch",
-    "storybook": "storybook dev -p 6006",
+    "stb": "storybook dev -p 6006",
     "build-stb": "storybook build --quiet -o stb-dist",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",

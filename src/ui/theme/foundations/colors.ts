@@ -1,16 +1,33 @@
 export const colors = {
   transparent: "transparent",
-  current: "currentColor",
   black: "#000000",
   white: "#FFFFFF",
-  charcoalGrey: "#36454F",
-  veryLightPink: "#DADADA",
-  butterscotch: "#F5B14A",
-  tiffanyBlue: "#88D0D4",
-  sea650: "#1c7171",
-  lavenderBlush: "#fff3f5",
-  oldLace: "#fff4e3",
-  butterflyWhite: "#fffbe8",
+
+  blackAlpha: {
+    50: "RGBA(0, 0, 0, 0.04)",
+    100: "RGBA(0, 0, 0, 0.06)",
+    200: "RGBA(0, 0, 0, 0.08)",
+    300: "RGBA(0, 0, 0, 0.16)",
+    400: "RGBA(0, 0, 0, 0.24)",
+    500: "RGBA(0, 0, 0, 0.36)",
+    600: "RGBA(0, 0, 0, 0.48)",
+    700: "RGBA(0, 0, 0, 0.64)",
+    800: "RGBA(0, 0, 0, 0.80)",
+    900: "RGBA(0, 0, 0, 0.92)",
+  },
+
+  whiteAlpha: {
+    50: "RGBA(255, 255, 255, 0.04)",
+    100: "RGBA(255, 255, 255, 0.06)",
+    200: "RGBA(255, 255, 255, 0.08)",
+    300: "RGBA(255, 255, 255, 0.16)",
+    400: "RGBA(255, 255, 255, 0.24)",
+    500: "RGBA(255, 255, 255, 0.36)",
+    600: "RGBA(255, 255, 255, 0.48)",
+    700: "RGBA(255, 255, 255, 0.64)",
+    800: "RGBA(255, 255, 255, 0.80)",
+    900: "RGBA(255, 255, 255, 0.92)",
+  },
 
   gray: {
     50: "#F7FAFC",
