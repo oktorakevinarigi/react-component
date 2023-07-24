@@ -1,15 +1,15 @@
-import React from "react"
-import { Meta, StoryObj } from "@storybook/react"
-import { Box } from "@chakra-ui/react"
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { Box } from "@chakra-ui/react";
 
-import { Dropdown, DropdownProps } from "./dropdown"
+import { Dropdown, DropdownProps } from "./dropdown";
 
 export default {
   title: "Components / Form / Dropdown",
   component: Dropdown,
-} as Meta
+} as Meta;
 
-type DeopdownStory = StoryObj<DropdownProps>
+type DeopdownStory = StoryObj<DropdownProps>;
 
 export const Mobile: DeopdownStory = {
   render: args => (
@@ -29,7 +29,7 @@ export const Mobile: DeopdownStory = {
     error: "",
     isPortal: true,
   },
-}
+};
 
 export const Desktop: DeopdownStory = {
   render: args => (
@@ -40,4 +40,4 @@ export const Desktop: DeopdownStory = {
   args: {
     ...Mobile.args,
   },
-}
+};

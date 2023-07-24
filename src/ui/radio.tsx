@@ -7,4 +7,4 @@ export {
   type UseRadioProps,
   useRadioGroup,
   type UseRadioGroupProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

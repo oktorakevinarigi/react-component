@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import React from "react"
-import { Meta, StoryObj } from "@storybook/react"
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
-import { Wrap, Flex, Text } from ".."
-import * as icons from "../icons"
+import { Wrap, Flex, Text } from "..";
+import * as icons from "../icons";
 
-const iconList = { ...icons }
+const iconList = { ...icons };
 
 export default {
   title: "UI / Icons",
   component: icons.AddIcon,
-} as Meta
+} as Meta;
 
-type ButtonStory = StoryObj<unknown>
+type ButtonStory = StoryObj<unknown>;
 
 export const Basic: ButtonStory = {
   render: () => (
@@ -36,7 +36,7 @@ export const Basic: ButtonStory = {
               {iconName}
             </Text>
           </Flex>
-        )
+        );
       })}
     </Wrap>
   ),
@@ -45,4 +45,4 @@ export const Basic: ButtonStory = {
     colorScheme: "blue",
     variant: "solid",
   },
-}
+};

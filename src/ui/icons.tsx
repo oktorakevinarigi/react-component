@@ -1,5 +1,5 @@
-import React from "react"
-import { createIcon } from "@chakra-ui/icons"
+import React from "react";
+import { createIcon } from "@chakra-ui/icons";
 
 export {
   Icon,
@@ -54,7 +54,7 @@ export {
   ViewOffIcon,
   WarningIcon,
   WarningTwoIcon,
-} from "@chakra-ui/icons"
+} from "@chakra-ui/icons";
 
 export const LocationIcon = createIcon({
   displayName: "LocationIcon",
@@ -76,4 +76,4 @@ export const LocationIcon = createIcon({
       </g>
     </g>,
   ],
-})
+});

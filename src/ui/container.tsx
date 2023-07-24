@@ -1,1 +1,1 @@
-export { Container, type ContainerProps } from "@chakra-ui/react"
+export { Container, type ContainerProps } from "@chakra-ui/react";

@@ -7,4 +7,4 @@ export {
   type FormErrorMessageProps,
   FormHelperText,
   type FormHelperTextProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

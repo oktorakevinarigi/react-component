@@ -1,15 +1,15 @@
-import React from "react"
-import { Meta, StoryObj } from "@storybook/react"
-import { Box } from "@chakra-ui/react"
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { Box } from "@chakra-ui/react";
 
-import { AutoComplete, AutoCompleteProps } from "./auto-complete"
+import { AutoComplete, AutoCompleteProps } from "./auto-complete";
 
 export default {
   title: "Components / Form / Auto Complete",
   component: AutoComplete,
-} as Meta
+} as Meta;
 
-type AutoCompleteStory = StoryObj<AutoCompleteProps>
+type AutoCompleteStory = StoryObj<AutoCompleteProps>;
 
 export const Desktop: AutoCompleteStory = {
   render: args => (
@@ -22,4 +22,4 @@ export const Desktop: AutoCompleteStory = {
     lists: [],
     onScrollEnd: () => undefined,
   },
-}
+};

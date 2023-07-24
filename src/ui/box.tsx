@@ -1,1 +1,1 @@
-export { Box, type BoxProps } from "@chakra-ui/react"
+export { Box, type BoxProps } from "@chakra-ui/react";

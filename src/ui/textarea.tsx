@@ -1,1 +1,1 @@
-export { Textarea, type TextareaProps } from "@chakra-ui/react"
+export { Textarea, type TextareaProps } from "@chakra-ui/react";

@@ -8,4 +8,4 @@ export {
   type RangeSliderThumbProps,
   useRangeSlider,
   type UseRangeSliderProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

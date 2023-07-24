@@ -1,32 +1,32 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react";
 import {
   type FormControlProps,
   type FormLabelProps,
   type InputProps,
   type TextProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
-import { useDebounce } from "@utils"
-import { AutoCompleteDesktop } from "./auto-complete-desktop"
+import { useDebounce } from "@utils";
+import { AutoCompleteDesktop } from "./auto-complete-desktop";
 
-type ListItemType = { id: string; label: string }
+type ListItemType = { id: string; label: string };
 export type AutoCompleteProps = {
-  isMobile: boolean
-  label?: string
-  value?: { id: string; label: string }
-  lists?: ListItemType[]
-  onScrollEnd?: (e: Event) => void
-  hasLoadMore?: boolean
-  isLoading?: boolean
-  onSelect?: (data: ListItemType) => void
-  onSearch?: (text: string) => void
+  isMobile: boolean;
+  label?: string;
+  value?: { id: string; label: string };
+  lists?: ListItemType[];
+  onScrollEnd?: (e: Event) => void;
+  hasLoadMore?: boolean;
+  isLoading?: boolean;
+  onSelect?: (data: ListItemType) => void;
+  onSearch?: (text: string) => void;
 
-  formControlProps?: FormControlProps
-  labelProps?: FormLabelProps
-  inputProps?: InputProps
-  searchProps?: InputProps
-  listItemProps?: TextProps
-}
+  formControlProps?: FormControlProps;
+  labelProps?: FormLabelProps;
+  inputProps?: InputProps;
+  searchProps?: InputProps;
+  listItemProps?: TextProps;
+};
 
 export function AutoComplete(props: AutoCompleteProps) {
   const {
@@ -44,70 +44,70 @@ export function AutoComplete(props: AutoCompleteProps) {
     inputProps,
     searchProps,
     listItemProps,
-  } = props
-  const [stateForm, setStateForm] = useState({ isList: false })
-  const [search, setSearch] = useState("")
-  const deb = useDebounce(search, 500)
+  } = props;
+  const [stateForm, setStateForm] = useState({ isList: false });
+  const [search, setSearch] = useState("");
+  const deb = useDebounce(search, 500);
 
-  const boxListRef = useRef<HTMLDivElement | null>(null)
-  let debounceTimer: ReturnType<typeof setTimeout>
+  const boxListRef = useRef<HTMLDivElement | null>(null);
+  let debounceTimer: ReturnType<typeof setTimeout>;
 
   function debounce(callback: () => void) {
-    window.clearTimeout(debounceTimer)
-    debounceTimer = setTimeout(callback, 1000)
+    window.clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(callback, 1000);
   }
 
   function handlerOnScrollEnd(event: Event) {
-    const { scrollHeight, clientHeight, scrollTop } = event.target as HTMLElement
-    const hiddenHeight = scrollHeight - clientHeight
+    const { scrollHeight, clientHeight, scrollTop } = event.target as HTMLElement;
+    const hiddenHeight = scrollHeight - clientHeight;
     debounce(() => {
       if (scrollTop > hiddenHeight * 0.7 && hasLoadMore && onScrollEnd) {
-        console.log("panggil")
-        onScrollEnd(event)
+        console.log("panggil");
+        onScrollEnd(event);
       }
-    })
+    });
   }
 
   useEffect(() => {
     if (boxListRef.current) {
-      boxListRef.current.addEventListener("scroll", handlerOnScrollEnd)
+      boxListRef.current.addEventListener("scroll", handlerOnScrollEnd);
     }
     return () => {
       if (boxListRef.current) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        boxListRef.current.removeEventListener("scroll", handlerOnScrollEnd)
+        boxListRef.current.removeEventListener("scroll", handlerOnScrollEnd);
       }
-    }
-  })
+    };
+  });
 
   useEffect(() => {
     function handlerClickToogle(event: Event) {
-      const container = document.getElementById("container") as HTMLElement
+      const container = document.getElementById("container") as HTMLElement;
       if (!container.contains(event.target as HTMLElement)) {
-        handleState("isList", false)
-        setSearch("")
+        handleState("isList", false);
+        setSearch("");
       }
     }
 
-    document.addEventListener("click", handlerClickToogle)
+    document.addEventListener("click", handlerClickToogle);
     return () => {
-      document.removeEventListener("click", handlerClickToogle)
-    }
-  }, [])
+      document.removeEventListener("click", handlerClickToogle);
+    };
+  }, []);
 
   useEffect(() => {
-    onSearch
-  }, [deb, onSearch])
+    onSearch;
+  }, [deb, onSearch]);
 
   function handleState(field: string, value: boolean) {
-    setStateForm(prev => ({ ...prev, [field]: value }))
+    setStateForm(prev => ({ ...prev, [field]: value }));
   }
 
   function onSelectItem(data: ListItemType) {
     if (onSelect) {
-      onSelect(data)
+      onSelect(data);
     }
-    handleState("isList", false)
+    handleState("isList", false);
   }
 
   const newProps = {
@@ -128,6 +128,6 @@ export function AutoComplete(props: AutoCompleteProps) {
     inputProps,
     searchProps,
     listItemProps,
-  }
-  return <AutoCompleteDesktop {...newProps} />
+  };
+  return <AutoCompleteDesktop {...newProps} />;
 }

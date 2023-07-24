@@ -1,6 +1,6 @@
-import React from "react"
-import { Box, Text, SimpleGrid, Flex } from "../../ui"
-import { theme } from "../../ui/theme"
+import React from "react";
+import { Box, Text, SimpleGrid, Flex } from "../../ui";
+import { theme } from "../../ui/theme";
 
 export function Palette(props: { name: string }) {
   return (
@@ -26,5 +26,5 @@ export function Palette(props: { name: string }) {
         </Flex>
       ))}
     </SimpleGrid>
-  )
+  );
 }

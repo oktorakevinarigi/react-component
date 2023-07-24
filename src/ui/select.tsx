@@ -1,1 +1,1 @@
-export { Select, type SelectProps } from "@chakra-ui/react"
+export { Select, type SelectProps } from "@chakra-ui/react";

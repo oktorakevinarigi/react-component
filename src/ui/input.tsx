@@ -14,4 +14,4 @@ export {
   InputAddon,
   type InputAddonProps,
   type InputElementProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

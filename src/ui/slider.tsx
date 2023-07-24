@@ -10,4 +10,4 @@ export {
   type SliderMarkProps,
   useSlider,
   type UseSliderProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

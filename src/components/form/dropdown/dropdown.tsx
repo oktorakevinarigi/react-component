@@ -1,30 +1,30 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
   useDisclosure,
   type FormControlProps,
   type FormLabelProps,
   type InputProps,
   type FlexProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
-import { useDebounce } from "@utils"
-import { DropdownDesktop } from "./dropdown-desktop"
-import { DropdownMobile } from "./dropdown-mobile"
+import { useDebounce } from "@utils";
+import { DropdownDesktop } from "./dropdown-desktop";
+import { DropdownMobile } from "./dropdown-mobile";
 
 export type DropdownProps = {
-  isMobile: boolean
-  label?: string
-  value?: string | number
-  onSelected?: (value: string | number) => void
-  lists?: { label: string; value: string | number }[]
-  error?: string
-  isPortal?: boolean
-  formControl?: FormControlProps
-  styleLabel?: FormLabelProps
-  styleInput?: InputProps
-  styleSearch?: InputProps
-  styleListItem?: FlexProps
-}
+  isMobile: boolean;
+  label?: string;
+  value?: string | number;
+  onSelected?: (value: string | number) => void;
+  lists?: { label: string; value: string | number }[];
+  error?: string;
+  isPortal?: boolean;
+  formControl?: FormControlProps;
+  styleLabel?: FormLabelProps;
+  styleInput?: InputProps;
+  styleSearch?: InputProps;
+  styleListItem?: FlexProps;
+};
 
 export function Dropdown(props: DropdownProps) {
   const {
@@ -41,16 +41,16 @@ export function Dropdown(props: DropdownProps) {
     styleInput,
     styleSearch,
     styleListItem,
-  } = props
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [search, setSearch] = useState("")
-  const deb = useDebounce(search, 500)
+  } = props;
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [search, setSearch] = useState("");
+  const deb = useDebounce(search, 500);
 
   function selected(valueSelected: string | number) {
-    onClose()
-    setSearch("")
+    onClose();
+    setSearch("");
     if (onSelected) {
-      onSelected(valueSelected)
+      onSelected(valueSelected);
     }
   }
 
@@ -72,9 +72,9 @@ export function Dropdown(props: DropdownProps) {
     styleInput,
     styleSearch,
     styleListItem,
-  }
+  };
   if (isMobile) {
-    return <DropdownMobile {...newProps} />
+    return <DropdownMobile {...newProps} />;
   }
-  return <DropdownDesktop {...newProps} />
+  return <DropdownDesktop {...newProps} />;
 }

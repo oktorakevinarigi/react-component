@@ -9,4 +9,4 @@ export {
   type NumberIncrementStepperProps,
   NumberDecrementStepper,
   type NumberDecrementStepperProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

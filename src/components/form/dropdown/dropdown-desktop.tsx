@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction } from "react";
 import {
   Box,
   Input,
@@ -14,31 +14,31 @@ import {
   type FormLabelProps,
   type InputProps,
   type FlexProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 type DropdownDesktopProps = {
-  isOpen: boolean
-  onOpen: () => void
-  onClose: () => void
-  error: string
-  label: string
-  isPortal: boolean
-  formControl?: FormControlProps
-  styleLabel?: FormLabelProps
-  styleInput?: InputProps
-  styleSearch?: InputProps
-  styleListItem?: FlexProps
-}
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  error: string;
+  label: string;
+  isPortal: boolean;
+  formControl?: FormControlProps;
+  styleLabel?: FormLabelProps;
+  styleInput?: InputProps;
+  styleSearch?: InputProps;
+  styleListItem?: FlexProps;
+};
 
 type ContentParam = {
-  search: string
-  lists: { label: string; value: string | number }[]
-  value: string | number
-  setSearch: Dispatch<SetStateAction<string>>
-  selected: (value: string | number) => void
-  styleSearch?: InputProps
-  styleListItem?: FlexProps
-}
+  search: string;
+  lists: { label: string; value: string | number }[];
+  value: string | number;
+  setSearch: Dispatch<SetStateAction<string>>;
+  selected: (value: string | number) => void;
+  styleSearch?: InputProps;
+  styleListItem?: FlexProps;
+};
 
 function Content({
   search,
@@ -55,7 +55,7 @@ function Content({
         <Input
           value={search}
           onChange={e => {
-            setSearch(e.target.value)
+            setSearch(e.target.value);
           }}
           {...styleSearch}
         />
@@ -66,7 +66,7 @@ function Content({
             <Flex
               key={item.value}
               onClick={() => {
-                selected(item.value)
+                selected(item.value);
               }}
               {...(value === item.value && { bg: "#e1f2f3" })}
               py={2}
@@ -80,11 +80,11 @@ function Content({
             >
               {item.label}
             </Flex>
-          )
+          );
         })}
       </Box>
     </PopoverContent>
-  )
+  );
 }
 
 export function DropdownDesktop(props: DropdownDesktopProps & ContentParam) {
@@ -105,7 +105,7 @@ export function DropdownDesktop(props: DropdownDesktopProps & ContentParam) {
     styleInput,
     styleSearch,
     styleListItem,
-  } = props
+  } = props;
 
   return (
     <Box position="relative" w="full">
@@ -146,5 +146,5 @@ export function DropdownDesktop(props: DropdownDesktopProps & ContentParam) {
         )}
       </Popover>
     </Box>
-  )
+  );
 }

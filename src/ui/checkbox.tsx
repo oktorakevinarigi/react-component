@@ -7,4 +7,4 @@ export {
   type UseCheckboxProps,
   useCheckboxGroup,
   type UseCheckboxGroupProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

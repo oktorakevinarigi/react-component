@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction } from "react";
 import {
   Box,
   Input,
@@ -11,28 +11,28 @@ import {
   type FormLabelProps,
   type InputProps,
   type TextProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
-type ItemType = { id: string; label: string }
+type ItemType = { id: string; label: string };
 type AutoCompleteDesktopProps = {
-  label?: string
-  value: { id: string; label: string }
-  lists: ItemType[]
-  stateForm: { isList: boolean }
-  handleState: (field: string, value: boolean) => void
-  boxListRef: React.MutableRefObject<HTMLDivElement | null>
-  isLoading: boolean
-  onSelectItem: (item: ItemType) => void
-  setSearch: Dispatch<SetStateAction<string>>
-  search: string
-  hasLoadMore: boolean
+  label?: string;
+  value: { id: string; label: string };
+  lists: ItemType[];
+  stateForm: { isList: boolean };
+  handleState: (field: string, value: boolean) => void;
+  boxListRef: React.MutableRefObject<HTMLDivElement | null>;
+  isLoading: boolean;
+  onSelectItem: (item: ItemType) => void;
+  setSearch: Dispatch<SetStateAction<string>>;
+  search: string;
+  hasLoadMore: boolean;
 
-  formControlProps?: FormControlProps
-  labelProps?: FormLabelProps
-  inputProps?: InputProps
-  searchProps?: InputProps
-  listItemProps?: TextProps
-}
+  formControlProps?: FormControlProps;
+  labelProps?: FormLabelProps;
+  inputProps?: InputProps;
+  searchProps?: InputProps;
+  listItemProps?: TextProps;
+};
 
 export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
   const {
@@ -53,7 +53,7 @@ export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
     inputProps,
     searchProps,
     listItemProps,
-  } = props
+  } = props;
 
   return (
     <Box id="container" position="relative" w="full">
@@ -61,7 +61,7 @@ export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
         <FormLabel {...labelProps}>{label}</FormLabel>
         <Input
           onClick={() => {
-            handleState("isList", true)
+            handleState("isList", true);
           }}
           readOnly
           value={value.label}
@@ -72,7 +72,7 @@ export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
             <Box position="absolute" left={2} right={2} top={2} bgColor="white">
               <Input
                 onChange={e => {
-                  setSearch(e.target.value)
+                  setSearch(e.target.value);
                 }}
                 value={search}
                 {...searchProps}
@@ -91,7 +91,7 @@ export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
                   }}
                   {...(item.id === value.id && { bgColor: "#e1f2f3" })}
                   onClick={() => {
-                    onSelectItem(item)
+                    onSelectItem(item);
                   }}
                   {...listItemProps}
                 >
@@ -108,5 +108,5 @@ export function AutoCompleteDesktop(props: AutoCompleteDesktopProps) {
         )}
       </FormControl>
     </Box>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction } from "react";
 import {
   Box,
   Drawer,
@@ -17,26 +17,26 @@ import {
   type FormLabelProps,
   type InputProps,
   type FlexProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 type DropdownMobileProps = {
-  isOpen: boolean
-  onOpen: () => void
-  onClose: () => void
-  search: string
-  setSearch: Dispatch<SetStateAction<string>>
-  value: string | number
-  selected: (value: string | number) => void
-  lists: { label: string; value: string | number }[]
-  error: string
-  label: string
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  search: string;
+  setSearch: Dispatch<SetStateAction<string>>;
+  value: string | number;
+  selected: (value: string | number) => void;
+  lists: { label: string; value: string | number }[];
+  error: string;
+  label: string;
 
-  formControl?: FormControlProps
-  styleLabel?: FormLabelProps
-  styleInput?: InputProps
-  styleSearch?: InputProps
-  styleListItem?: FlexProps
-}
+  formControl?: FormControlProps;
+  styleLabel?: FormLabelProps;
+  styleInput?: InputProps;
+  styleSearch?: InputProps;
+  styleListItem?: FlexProps;
+};
 
 export function DropdownMobile(props: DropdownMobileProps) {
   const {
@@ -56,7 +56,7 @@ export function DropdownMobile(props: DropdownMobileProps) {
     styleInput,
     styleSearch,
     styleListItem,
-  } = props
+  } = props;
 
   return (
     <Box>
@@ -80,7 +80,7 @@ export function DropdownMobile(props: DropdownMobileProps) {
             <Input
               value={search}
               onChange={e => {
-                setSearch(e.target.value)
+                setSearch(e.target.value);
               }}
               {...styleSearch}
             />
@@ -89,7 +89,7 @@ export function DropdownMobile(props: DropdownMobileProps) {
                 <React.Fragment key={item.value}>
                   <Flex
                     onClick={() => {
-                      selected(item.value)
+                      selected(item.value);
                     }}
                     {...(value === item.value && { bg: "#e1f2f3" })}
                     py={2}
@@ -105,11 +105,11 @@ export function DropdownMobile(props: DropdownMobileProps) {
                   </Flex>
                   <Divider />
                 </React.Fragment>
-              )
+              );
             })}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
     </Box>
-  )
+  );
 }

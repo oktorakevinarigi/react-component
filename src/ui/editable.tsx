@@ -7,4 +7,4 @@ export {
   type EditableTextareaProps,
   EditablePreview,
   type EditablePreviewProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";

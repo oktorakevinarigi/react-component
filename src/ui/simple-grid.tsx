@@ -1,1 +1,1 @@
-export { SimpleGrid, type SimpleGridProps } from "@chakra-ui/react"
+export { SimpleGrid, type SimpleGridProps } from "@chakra-ui/react";

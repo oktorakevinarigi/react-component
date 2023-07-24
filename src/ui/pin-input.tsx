@@ -3,4 +3,4 @@ export {
   type PinInputProps,
   PinInputField,
   type PinInputFieldProps,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
